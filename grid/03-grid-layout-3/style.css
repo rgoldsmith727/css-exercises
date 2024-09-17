@@ -1,6 +1,12 @@
 * {
   margin: 0;
   padding: 0;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
 }
 
 .container {
@@ -10,14 +16,13 @@
   grid-template:
       "header header" 70px
       "sidebar nav" 50px
-      "sidebar article" auto
+      "sidebar article" 1fr
       "footer footer" 50px
-      / 150px auto;
+      / 200px 1fr;
 }
 
 .container div {
-  padding: 15px;
-  font-size: 32px;
+  font-size: 1.5rem;
   font-family: Helvetica;
   font-weight: bold;
   color: white;
@@ -26,11 +31,36 @@
 .header {
   background-color: #393f4d;
   grid-area: header;
+
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: center;
+}
+
+.menu ul { 
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  align-items: center;
+}
+
+.nav {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav ul {
+  display: grid;
+  grid-template: 1fr / repeat(3, 1fr);
+  gap: 15px;
+  align-items: center;
 }
 
 .menu ul,
 .menu li {
-  font-size: 16px;
+  font-size: 0.75rem;
 }
 
 .sidebar {
@@ -41,7 +71,7 @@
 .sidebar .photo {
   background-color: white;
   color: black;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: normal;
   border-radius: 10px;
 }
@@ -50,7 +80,7 @@
 .sidebar .side-content {
   background-color: white;
   color: black;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
 }
 
@@ -60,7 +90,7 @@
 }
 
 .nav ul li {
-  font-size: 16px;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
@@ -70,7 +100,7 @@
 }
 
 .article p {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: sans-serif;
   color: white;
   text-align: left;
